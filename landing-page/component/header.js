@@ -1,29 +1,28 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header() {
-  const [isClicked, setIsClicked] = useState(false);
-  const clickMenu = () => setIsClicked(!isClicked);
+  const [isClicked, setIsClicked] = useState(false)
+  const clickMenu = () => setIsClicked(!isClicked)
 
   return (
     <>
       <header>
         <div className="left-container">
           <Link href="/">
-            <Image src={"/logo.png"} fill style={{ objectFit: "contain" }} />
+            <Image src={'/logo.png'} fill style={{ objectFit: 'contain' }} />
           </Link>
         </div>
 
         <div className="right-container">
           <div className="icon-container">
             <Link
-              // href={"https://dis.qa/wMm"}
-              href={""}
-              // rel="noopener noreferrer"
-              // target="_blank"
+              href={'https://dis.qa/wMm'}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <Image
                 src="/image/site.png"
@@ -33,14 +32,11 @@ export default function Header() {
               />
             </Link>
             <Link
-              // href={
-              //   "https://instagram.com/fitnee.official?igshid=OGQ5ZDc2ODk2ZA=="
-              // }
               href={
-                ""
+                'https://instagram.com/fitnee.official?igshid=OGQ5ZDc2ODk2ZA=='
               }
-              // rel="noopener noreferrer"
-              // target="_blank"
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <Image
                 src="/image/sns.png"
@@ -50,15 +46,11 @@ export default function Header() {
               />
             </Link>
           </div>
-          {/* <Link href="/aboutus" className="aboutus-btn nav-btn"> */}
-          <Link href="" className="aboutus-btn nav-btn">
+          <Link href="/aboutus" className="aboutus-btn nav-btn">
             팀 피트니
           </Link>
-          <Link href="/promotion" className="promotion-btn nav-btn">
-            사전예약하기
-          </Link>
           <Image
-            src={isClicked ? "/image/close.png" : "/image/hamburger.png"}
+            src={isClicked ? '/image/close.png' : '/image/hamburger.png'}
             className="nav-menu mobile"
             width={24}
             height={24}
@@ -72,22 +64,14 @@ export default function Header() {
           <div className="sub-content">
             <Link
               onClick={clickMenu}
-              // href="/aboutus"
-              href=""
+              href="/aboutus"
               className="aboutus-btn mobile-nav-btn"
             >
               팀 피트니
-            </Link>
-            <Link
-              onClick={clickMenu}
-              href="/promotion"
-              className="promotion-btn mobile-nav-btn"
-            >
-              사전예약하기
             </Link>
           </div>
         </div>
       )}
     </>
-  );
+  )
 }
